@@ -8,6 +8,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
+                 npm i -g nativescript  
+                 npm i --save-dev @nativescript/android@latest  
+                 ns clean && ns run android
+                    
                 sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
