@@ -9,7 +9,7 @@ pipeline {
             steps {
                 echo 'Running build automation'
                  npm i -g nativescript  
-                 npm i --save-dev @nativescript/android@latest  
+                 npm i --save-dev   
                  ns clean && ns run android
                     
                 sh './gradlew build --no-daemon'
