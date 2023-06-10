@@ -3,6 +3,7 @@ pipeline {
     environment {
         //be sure to replace "bhavukm" with your own Docker Hub username
         DOCKER_IMAGE_NAME = "swathilakkoju/train-schedule"
+        //KUBECONFIG_PATH = "/home/srisaiswathilakkoju/cicd-pipeline-train-schedule-autodeploy/config"
     }
     stages {
         stage('Build') {
@@ -40,7 +41,7 @@ pipeline {
                 }
             }
         }
-        stage('CanaryDeploy') {
+        /*stage('CanaryDeploy') {
            // when {
               //  branch 'master'
            // }
@@ -79,6 +80,6 @@ pipeline {
                     enableConfigSubstitution: true
                 )
             }
-        }
+        }*/
     }
 }
