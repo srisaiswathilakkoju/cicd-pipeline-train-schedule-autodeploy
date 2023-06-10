@@ -85,7 +85,8 @@ pipeline {
         stage('kube deploy'){
             steps{
                 script{
-                    kubernetesDeploy(configs:"train-schedule-kube.yml","train-schedule-kube-canary.yml")
+                    kubernetesDeploy(configs:
+                                     "train-schedule-kube.yml","train-schedule-kube-canary.yml")
                 }
             }
         }
